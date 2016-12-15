@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Directory</title>
+    </head>
+    <body>
+      <h1>Directory</h1>
+      {% for person in people %}
+        <hr />
+        <h3>{{person.name}}</h3>
+        <img src="{{person.image}}", alt= "{{person.name}}" , width="200px"/>
+
+        <p>Title: {{person.title}}</p>
+        <p>Email: {{person.email}}</p>
+      {% endfor %}
+
+    </body>
+  </html>
