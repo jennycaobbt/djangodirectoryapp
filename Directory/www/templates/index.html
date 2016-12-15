@@ -1,18 +1,27 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
   <html>
     <head>
       <title>Directory</title>
+      <link rel="stylesheet" href="{% static 'normalize.css' %}"></link>
+      <link rel="stylesheet" href="{% static 'main.css' %}"></link>
+
     </head>
     <body>
-      <h1>Directory</h1>
-      {% for person in people %}
-        <hr />
-        <h3>{{person.name}}</h3>
-        <img src="{{person.image}}", alt= "{{person.name}}" , width="200px"/>
+      <main>
+        <h1>Directory</h1>
 
-        <p>Title: {{person.title}}</p>
-        <p>Email: {{person.email}}</p>
-      {% endfor %}
+        {% for person in people %}
+          <section>
 
+            <img src="{{person.image}}", alt= "{{person.name}}", />
+            <h2>{{person.name}}</h2>
+            <p class="person-title">{{person.title}}</p>
+            <p class="person-email">{{person.email}}</p>
+          </section>
+        {% endfor %}
+
+      </main>
     </body>
   </html>
